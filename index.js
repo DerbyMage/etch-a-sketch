@@ -43,6 +43,6 @@ selector.forEach(selection => {
 
 const button = document.querySelector('button')
 button.addEventListener('click', function() {
-    const input =  prompt('Hey man how many tiles high do you want the board to be?  Its a square')
+    const input =  prompt('Hey man how many tiles high do you want the board to be?  Its a square.  Maximum of 16')
    etch(input)
 } )
