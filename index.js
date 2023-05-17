@@ -29,7 +29,8 @@ console.log(selector)
 
 selector.forEach(selection => {
     selection.addEventListener('mouseover', function() {
-        selection.style.backgroundColor = 'blue'
+        console.log(Math.floor(Math.random() * 255))
+        selection.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
     })
 })
 
