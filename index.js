@@ -1,23 +1,27 @@
-function etch() {
+function etch(num) {
 
+
+if(document.querySelector('.container')) {
+    document.body.removeChild(document.querySelector('.container'))
+}
+    
 const container = document.createElement('div')
+
 container.setAttribute('class', 'container')
 
 
 
 document.body.appendChild(container)
 
-for(let i = 0; i < 256; i++) {
+for(let i = 0; i < (num * num); i++) {
     let box = document.createElement('div')
     box.setAttribute('class', 'box')
-    console.log(i)
+    // console.log(i)
     container.appendChild(box)
 }
 
+container.style.setProperty('--custom-size', num)
 
-}
-
-etch()
 
 const selector = document.querySelectorAll('.box')
 
@@ -28,3 +32,17 @@ selector.forEach(selection => {
         selection.style.backgroundColor = 'blue'
     })
 })
+
+} 
+
+
+
+// etch(12)
+
+
+
+const button = document.querySelector('button')
+button.addEventListener('click', function() {
+    const input =  prompt('Hey man how many tiles high do you want the board to be?  Its a square')
+   etch(input)
+} )
